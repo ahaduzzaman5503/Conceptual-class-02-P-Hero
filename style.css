@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #121212;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    max-width: 1200Px;
+    margin: 0 auto ;
+}
+
+.banner{
+    display: flex;
+    height: 100vh;
+}
+
+.banner-left{
+    flex: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.banner-right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-right img{
+    border: 4px solid #22bedd;
+}
+
+.banner-text {
+    line-height: 22px;
+}
+.love-button {
+    padding: 10px 30px;
+    color: rgb(17, 17, 17);
+    font-size: 20px;
+    background-color: #22bedd;
+    border-color: #22bedd;
+    margin-top: 15px;
+    outline: 0;
+    cursor: pointer;
+    transition: .3s linear;
+}
+.love-button:hover{
+    background-color: transparent;
+     color: white;
+
+}
+
+.banner-title{
+    font-size: 60px;
+    position: relative;
+    white-space: nowrap;
+    color: transparent;
+}
+
+.banner-title::before {
+    content: 'Ahaduzzaman Ahad';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    color: #22bedd;
+    animation-name: typing;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes typing{
+    0%{content: 'A|';}
+    4%{content: 'Ah|';}
+    8%{content: 'Aha|';}
+    12%{content: 'Ahad|';}
+    16%{content: 'Ahadu|';}
+    20%{content: 'Ahaduz|';}
+    24%{content: 'Ahaduzz|';}
+    28%{content: 'Ahaduzza|';}
+    32%{content: 'Ahaduzzam|';}
+    36%{content: 'Ahaduzzama|';}
+    40%{content: 'Ahaduzzaman|';}
+    44%{content: 'Ahaduzzaman |';}
+    48%{content: 'Ahaduzzaman A|';}
+    52%{content: 'Ahaduzzaman Ah|';}
+    56%{content: 'Ahaduzzaman Aha|';}
+    60%{content: 'Ahaduzzaman Ahad|';}
+    64%,
+    83%{content: 'Ahaduzzaman Ahad|';}
+    84%{content: 'Ahaduzzaman Aha|';}
+    85%{content: 'Ahaduzzaman Ah|';}
+    86%{content: 'Ahaduzzaman A|';}
+    87%{content: 'Ahaduzzaman |';}
+    88%{content: 'Ahaduzzaman|';}
+    89%{content: 'Ahaduzzama|';}
+    90%{content: 'Ahaduzzam|';}
+    91%{content: 'Ahaduzza|';}
+    92%{content: 'Ahaduzz|';}
+    93%{content: 'Ahaduz|';}
+    94%{content: 'Ahadu|';}
+    95%{content: 'Ahad|';}
+    96%{content: 'Aha|';}
+    97%{content: 'Ah|';}
+    98%{content: 'A|';}
+    99%{content: '|';}
+    100%{content: '|';}
+}
+
+.gallery{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 200px;
+}
+
+.photo{
+    width: 280px;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.border{
+    background-color: bisque;
+    position: absolute;
+    transition: .7s linear;
+
+}
+
+.border.top, .border.bottom{
+    height: 4px;
+    width: 270px;
+}
+.border.right, .border.left{
+    height: 270px;
+    width: 4px;
+}
+.border.bottom{
+    bottom: 5px;
+    left: 100%;
+}
+
+.border.left{
+    left: 5px;
+    top: 100%;
+}
+
+.border.top{
+    top:5px;
+    right:100%;
+}
+
+.border.right{
+    right: 5px;
+    bottom: 100%;
+}
+
+.photo:hover .border.bottom{
+    left: 5px;
+}
+.photo:hover .border.left{
+    top: 5px;
+}
+.photo:hover .border.right{
+    bottom: 5px;
+}
+.photo:hover .border.top{
+    right: 5px;
+}
+
+.photo-contant{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    visibility: hidden;
+    transition: .7s linear;
+}
+.photo:hover .photo-contant{
+    top: 200px;
+    bottom: 200px;
+    left: 60px;
+    visibility: visible;
+}
+
+.photo::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: .4s linear;
+    background-color: rgba(3, 3, 3, 0.555)
+    
+}
+
+
+.photo:hover::before{
+    opacity: 1;    
+}
